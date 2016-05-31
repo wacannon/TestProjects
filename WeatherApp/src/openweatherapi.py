@@ -14,13 +14,13 @@ def getdailyforecast():
 
     city = data['city']['name']
     days = data['list']
-
+    return days
     # print "Weather for: ", city
-    for day in days:
-        date = datetime.datetime.fromtimestamp(int(day['dt'])).strftime('%m-%d')
-        weather = day['weather'][0]['description']
-        maxtemp = day['temp']['max']
-        mintemp = day['temp']['min']
-        humidity = day['humidity']
-        windspeed = day['speed']
-        return date, " Weather:", weather, " Max:", maxtemp, " Min:", mintemp, " Humidity:", humidity, " Wind:", windspeed, "mph"
+    # for day in days:
+    #     date = datetime.datetime.fromtimestamp(int(day['dt'])).strftime('%m-%d')
+    #     weather = day['weather'][0]['description']
+    #     maxtemp = day['temp']['max']
+    #     mintemp = day['temp']['min']
+    #     humidity = day['humidity']
+    #     windspeed = day['speed']
+    #     return date, " Weather:", weather, " Max:", maxtemp, " Min:", mintemp, " Humidity:", humidity, " Wind:", windspeed, "mph"

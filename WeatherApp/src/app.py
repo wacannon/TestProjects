@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session
 from openweatherapi import getdailyforecast
-import sys, dateutil
+import sys, datetime
 
 
 reload(sys)
@@ -16,6 +16,11 @@ def main():
     data = getdailyforecast()
     return render_template('index.html', data=data)
 
+
+@app.template_filter('shortdate')
+def _jinja2_filter_datetime(date):
+    shortdate = datetime.datetime.fromtimestamp(int(date)).strftime('%m-%d')
+    return shortdate
 
 if __name__ == "__main__":
     app.run()
