@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hendrix Dashboard</title>
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron/jumbotron.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles/site.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+</head>
+<body>
+<div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a></li>
+                    <li role="presentation"><a href="/weeklyreport">Weekly Report</a></li>
+                    <li role="presentation"><a href="/reconcile">Reconcile</a> </li>
+                    <li role="presentation"><a href="/Blocked">Blocked</a></li>
+                    <li role="presentation"><a href="/admin">Admin</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Hendrix Dashboard</h3>
+        </div>
+
+        <div class="jumbotron">
+
+            <div class="col-lg-4">
+                <div class="content">
+                    <div class="col-lg-4 green box box-title-user">Aaron</div>
+                    <div class="col-lg-4 green box box-title-user">Trisch</div>
+                    <div class="col-lg-4 green box box-title-user">Earl</div>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+            <div style="clear:both"></div> <!--needs to be a better way than this-->
+        </div>
+
+        <div class="row marketing">
+            <div class="col-lg-6">
+                <a href="/Blocked"><h4>Blocked Stories</h4></a>
+                <p style="font-size:16px">{{count}}</p>
+                <hr>
+                <h4>Backlog</h4>
+                <p>Estimated days worth of change requests.</p>
+                <hr>
+                <h4># of Weekly Defects</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+            </div>
+
+            <div class="col-lg-6">
+                <h4>Current Close Rates</h4>
+                <div><figure>{{graphClose|safe}}</figure></div>
+
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <p>&copy; Hendrix 2016</p>
+        </footer>
+
+    </div>
+</body>
+</html>
