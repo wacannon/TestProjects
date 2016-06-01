@@ -1,6 +1,5 @@
 from urllib2 import Request, urlopen, URLError
 import json
-import datetime
 
 
 def getdailyforecast():

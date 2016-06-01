@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Life Weather</title>
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/jumbotron/jumbotron.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles/jumbotron.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='styles/site.css') }}" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+    <script src="static/js/jquery-2.1.4.min.js"></script>
 </head>
 <body>
 <div class="container">
