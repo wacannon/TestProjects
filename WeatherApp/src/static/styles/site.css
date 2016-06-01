@@ -1,0 +1,17 @@
+.blockedwarning { color:red; }
+
+.box{
+    text-align: center;
+    height: 75px;
+    width: 75px;
+    margin: 3px;
+}
+.box-title-user{ vertical-align: middle; line-height: 75px; font-weight:bold}
+
+.green {background-color: #6CB559}
+.red {background-color: #D76A6A}
+.yellow {background-color: #D7D66A}
+
+.row {clear: both}
+.content {text-align: center; margin: 0 auto; width: 80%}
+.rowheight50 {height: 50px}
