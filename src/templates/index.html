@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Life Weather</title>
     <link href="{{ url_for('static', filename='styles/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='styles/jumbotron.css') }}" rel="stylesheet">
@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="container">
-        <div class="header">
+        <div class="header row">
             <nav>
                 <ul class="nav nav-pills pull-right">
                     <li role="presentation" class=""><a href="#">Current</a></li>
@@ -22,10 +22,10 @@
 
         <div class="row marketing">
                 {% for day in data %}
-                <div class="col-sm-3 rowheight50">{{day['dt']|shortdate}}</div>
-                <div class="col-sm-3 rowheight50"><img src="http://openweathermap.org/img/w/{{day['weather'][0]['icon']}}.png"/></div>
-                <div class="col-sm-3 rowheight50">{{day['weather'][0]['description']}}</div>
-                <div class="col-sm-3 rowheight50">{{'%0.1f' % day['temp']['max']|float}}&deg; / {{'%0.1f' % day['temp']['min']|float}}&deg;</div>
+                <div class="col-xs-3 rowheight50">{{day['dt']|shortdate}}</div>
+                <div class="col-xs-3 rowheight50"><img src="http://openweathermap.org/img/w/{{day['weather'][0]['icon']}}.png"/></div>
+                <div class="col-xs-3 rowheight50">{{day['weather'][0]['description']}}</div>
+                <div class="col-xs-3 rowheight50">{{'%0.1f' % day['temp']['max']|float}}&deg; / {{'%0.1f' % day['temp']['min']|float}}&deg;</div>
                 {% endfor %}
         </div>
 
